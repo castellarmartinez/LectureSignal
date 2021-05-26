@@ -2,14 +2,35 @@ clc, clear, clf
 n = 0:20;
 
 figure(1)
-stem(n, x1(n))
-hold on
-stem(S1(n, x1(n)))
+subplot(2, 2, 1)
+stem(n, S1(n, x1(n)))
+axis([0, 20,-3, 2])
+title('$Sys\{x_{1}[n]\}$', 'Interpreter', 'latex')
+legend('$y[n] = \cos[0.2\pi n]x[n]$', 'Interpreter', 'latex')
 
-figure(2)
-stem(n, x2(n))
-hold on
-stem(S2(n, x2(n)))
+subplot(2, 2, 2)
+stem(n, S1(n, x2(n)))
+axis([0, 20, -3, 2])
+title('$Sys\{x_{2}[n]\}$', 'Interpreter', 'latex')
+legend('$y[n] = \cos[0.2\pi n]x[n]$', 'Interpreter', 'latex')
+
+subplot(2, 2, 3)
+stem(n, S1(n, x1(n) + x2(n)))
+axis([0, 20, -3, 2])
+title('$Sys\{x_{1}[n] + x_{2}[n]\}$', 'Interpreter', 'latex')
+legend('$y[n] = \cos[0.2\pi n]x[n]$', 'Interpreter', 'latex')
+
+subplot(2, 2, 4)
+stem(n, S1(n, x1(n)) + S1(n, x2(n)))
+axis([0, 20, -3, 2])
+title('$Sys\{x_{1}[n]\} + Sys\{x_{2}[n]\}$', 'Interpreter', 'latex')
+legend('$y[n] = \cos[0.2\pi n]x[n]$', 'Interpreter', 'latex')
+
+% 
+% figure(2)
+% stem(n, x2(n))
+% hold on
+% stem(n, S2(n, x2(n)))
 
 
 
