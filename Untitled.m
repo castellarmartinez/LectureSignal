@@ -1,4 +1,0 @@
-%{
-Comentario 
-Nuevo comentario
-%}
