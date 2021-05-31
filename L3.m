@@ -3,85 +3,83 @@ n = 0:20;
 
 
 %**************System 1*************%
-figure(1)
-subplot(2, 2, 1)
-stem(n, S1(n, x1(n)))
-hold on
-stem(n, x1(n))
-axis([0, 20,-3, 2])
-title('$Sys_{1}\{x_{1}[n]\}$', 'Interpreter', 'latex')
-legend('$y[n] = \cos[0.2\pi n]x[n]$', 'Interpreter', 'latex')
-
-subplot(2, 2, 2)
-stem(n, S1(n, x2(n)))
-axis([0, 20, -3, 2])
-title('$Sys_{1}\{x_{2}[n]\}$', 'Interpreter', 'latex')
-legend('$y[n] = \cos[0.2\pi n]x[n]$', 'Interpreter', 'latex')
-
-subplot(2, 2, 3)
-stem(n, S1(n, x1(n) + x2(n)))
-axis([0, 20, -3, 2])
-title('$Sys_{1}\{x_{1}[n] + x_{2}[n]\}$', 'Interpreter', 'latex')
-legend('$y[n] = \cos[0.2\pi n]x[n]$', 'Interpreter', 'latex')
-
-subplot(2, 2, 4)
-stem(n, S1(n, x1(n)) + S1(n, x2(n)))
-axis([0, 20, -3, 2])
-title('$Sys_{1}\{x_{1}[n]\} + Sys\{x_{2}[n]\}$', 'Interpreter', 'latex')
-legend('$y[n] = \cos[0.2\pi n]x[n]$', 'Interpreter', 'latex')
+% figure(1)
+% subplot(2, 2, 1)
+% stem(n, S1(n, x1(n))) 
+% axis([0, 20,-2, 2])
+% title('$Sys_{1}\{x_{1}[n]\}$', 'Interpreter', 'latex')
+% legend('$y[n] = \cos[0.2\pi n]x[n]$', 'Interpreter', 'latex')
+% 
+% subplot(2, 2, 2)
+% stem(n, S1(n, x2(n)))
+% axis([0, 20, -1, 1])
+% title('$Sys_{1}\{x_{2}[n]\}$', 'Interpreter', 'latex')
+% legend('$y[n] = \cos[0.2\pi n]x[n]$', 'Interpreter', 'latex')
+% 
+% subplot(2, 2, 3)
+% stem(n, S1(n, 5 * x1(n) - 3 * x2(n)))
+% axis([0, 20, -10, 10])
+% title('$Sys_{1}\{5x_{1}[n] - 5x_{2}[n]\}$', 'Interpreter', 'latex')
+% legend('$y[n] = \cos[0.2\pi n]x[n]$', 'Interpreter', 'latex')
+% 
+% subplot(2, 2, 4)
+% stem(n, 5 * S1(n, x1(n)) - 3 * S1(n, x2(n)))
+% axis([0, 20, -10, 10])
+% title('$5Sys_{1}\{x_{1}[n]\} - 3Sys_{1}\{x_{2}[n]\}$', 'Interpreter', 'latex')
+% legend('$y[n] = \cos[0.2\pi n]x[n]$', 'Interpreter', 'latex')
 
 %**************System 2*************%
 
-figure(2)
-subplot(2, 2, 1)
-stem(n, S2(n, x1(n)))
-axis([0, 20,-5, 12])
-title('$Sys_{2}\{x_{1}[n]\}$', 'Interpreter', 'latex')
-legend('$y[n] = x[n] + 3x[n-1]$', 'Interpreter', 'latex')
-
-subplot(2, 2, 2)
-stem(n, S2(n, x2(n)))
-axis([0, 20, -5, 12])
-title('$Sys_{2}\{x_{2}[n]\}$', 'Interpreter', 'latex')
-legend('$y[n] = x[n] + 3x[n-1]$', 'Interpreter', 'latex')
-
-subplot(2, 2, 3)
-stem(n, S2(n, x1(n) + x2(n)))
-axis([0, 20, -5, 12])
-title('$Sys_{2}\{x_{1}[n] + x_{2}[n]\}$', 'Interpreter', 'latex')
-legend('$y[n] = x[n] + 3x[n-1]$', 'Interpreter', 'latex')
-
-subplot(2, 2, 4)
-stem(n, S2(n, x1(n)) + S2(n, x2(n)))
-axis([0, 20, -5, 12])
-title('$Sys_{2}\{x_{1}[n]\} + Sys\{x_{2}[n]\}$', 'Interpreter', 'latex')
-legend('$y[n] = x[n] + 3x[n-1]$', 'Interpreter', 'latex')
+% figure(2)
+% subplot(2, 2, 1)
+% stem(n, S2(n, x1(n)))
+% axis([0, 20,-1, 10])
+% title('$Sys_{2}\{x_{1}[n]\}$', 'Interpreter', 'latex')
+% legend('$y[n] = x[n] + 3x[n-1]$', 'Interpreter', 'latex')
+% 
+% subplot(2, 2, 2)
+% stem(n, S2(n, x2(n)))
+% axis([0, 20, -5, 5])
+% title('$Sys_{2}\{x_{2}[n]\}$', 'Interpreter', 'latex')
+% legend('$y[n] = x[n] + 3x[n-1]$', 'Interpreter', 'latex')
+% 
+% subplot(2, 2, 3)
+% stem(n, S2(n, 5 * x1(n) - 3 * x2(n)))
+% axis([0, 20, -10, 35])
+% title('$Sys_{2}\{5x_{1}[n] - 3x_{2}[n]\}$', 'Interpreter', 'latex')
+% legend('$y[n] = x[n] + 3x[n-1]$', 'Interpreter', 'latex')
+% 
+% subplot(2, 2, 4)
+% stem(n, 5 * S2(n, x1(n)) - 3 * S2(n, x2(n)))
+% axis([0, 20, -10, 35])
+% title('$5Sys_{2}\{x_{1}[n]\} - 3Sys_{2}\{x_{2}[n]\}$', 'Interpreter', 'latex')
+% legend('$y[n] = x[n] + 3x[n-1]$', 'Interpreter', 'latex')
 
 %**************System 3*************%
 
 figure(3)
 subplot(2, 2, 1)
 stem(n, S3(n, x1(n)))
-axis([0, 20,-3, 2])
+axis([0, 20, -1, 14])
 title('$Sys_{3}\{x_{1}[n]\}$', 'Interpreter', 'latex')
 legend('$y[n] = x[n] + 3x[n-1]x[n-2]$', 'Interpreter', 'latex')
 
 subplot(2, 2, 2)
 stem(n, S3(n, x2(n)))
-axis([0, 20, -3, 2])
+axis([0, 20, -1, 5])
 title('$Sys_{3}\{x_{2}[n]\}$', 'Interpreter', 'latex')
 legend('$y[n] = x[n] + 3x[n-1]x[n-2]$', 'Interpreter', 'latex')
 
 subplot(2, 2, 3)
-stem(n, S3(n, x1(n) + x2(n)))
-axis([0, 20, -3, 2])
-title('$Sys_{3}\{x_{1}[n] + x_{2}[n]\}$', 'Interpreter', 'latex')
+stem(n, S3(n, 5 * x1(n) - 3 * x2(n)))
+axis([0, 20, -15, 180])
+title('$Sys_{3}\{5x_{1}[n] - 3x_{2}[n]\}$', 'Interpreter', 'latex')
 legend('$y[n] = x[n] + 3x[n-1]x[n-2]$', 'Interpreter', 'latex')
 
 subplot(2, 2, 4)
-stem(n, S3(n, x1(n)) + S3(n, x2(n)))
-axis([0, 20, -3, 2])
-title('$Sys_{3}\{x_{1}[n]\} + Sys\{x_{2}[n]\}$', 'Interpreter', 'latex')
+stem(n, 5 * S3(n, x1(n)) - 3 * S3(n, x2(n)))
+axis([0, 20, -10, 60])
+title('$5Sys_{3}\{x_{1}[n]\} - 3Sys_{3}\{x_{2}[n]\}$', 'Interpreter', 'latex')
 legend('$y[n] = x[n] + 3x[n-1]x[n-2]$', 'Interpreter', 'latex')
 
 
